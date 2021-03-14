@@ -1,0 +1,84 @@
+<div class="row">
+  <div class="col-md-8">
+    <form [formGroup]="formulario" (ngSubmit)="salvar()" novalidate>
+      <div class="form-group">
+        <label class="form-check-label">Nome</label>
+        <input type="text" id="nome" name="nome" formControlName="nome" class="form-control" />
+        <div *ngIf="formulario.get('nome')!.invalid
+          && (formulario.get('nome')!.dirty
+          || formulario.get('nome')!.touched)">
+          <span class="form-text text-danger">Nome é obrigatório</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-check-label">CPF</label>
+        <div>
+          <input pInputText formControlName="cpf" placeholder="000.000.000-00" maxlength="14" id="cpf" name="cpf" />
+        </div>
+        <div *ngIf="formulario.get('cpf')!.invalid
+          && (formulario.get('cpf')!.dirty
+          || formulario.get('cpf')!.touched)">
+          <span class="form-text text-danger">CPF é obrigatório</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-check-label">Sexo</label>
+        <input type="text" id="sexo" name="sexo" formControlName="sexo" class="form-control" />
+        <div *ngIf="formulario.get('sexo')!.invalid
+          && (formulario.get('sexo')!.dirty
+          || formulario.get('sexo')!.touched)">
+          <span class="form-text text-danger">Sexo é obrigatório</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-check-label">Inserir e-amil</label>
+        <input type="text" id="email" name="email" formControlName="email" class="form-control" />
+        <div *ngIf="formulario.get('email')!.invalid
+          && (formulario.get('email')!.dirty
+          || formulario.get('email')!.touched)">
+          <span class="form-text text-danger">E-mail é obrigatório</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-check-label">Insira a data de nascimento</label>
+        <input type="text" id="dataNascimento" name="dataNascimento" formControlName="dataNascimento"
+          class="form-control" />
+        <div *ngIf="formulario.get('dataNascimento')!.invalid
+          && (formulario.get('dataNascimento')!.dirty
+          || formulario.get('dataNascimento')!.touched)">
+          <span class="form-text text-danger">O campo data de nascimento é obrigatório</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-check-label">Inserir a naturalidade</label>
+        <input type="text" id="naturalidade" name="naturalidade" formControlName="naturalidade" class="form-control" />
+        <div *ngIf="formulario.get('naturalidade')!.invalid
+          && (formulario.get('naturalidade')!.dirty
+          || formulario.get('naturalidade')!.touched)">
+          <span class="form-text text-danger">A naturalidade é obrigatório</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-check-label">Inserir a nacionalidade</label>
+        <input type="text" id="nacionalidade" name="nacionalidade" formControlName="nacionalidade"
+          class="form-control" />
+        <div *ngIf="formulario.get('nacionalidade')!.invalid
+          && (formulario.get('nacionalidade')!.dirty
+          || formulario.get('nacionalidade')!.touched)">
+          <span class="form-text text-danger">Inserir a nacionalidade</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary mr-3" [disabled]="!formulario.valid">Salvar</button>
+        <button type="button" class="btn btn-danger" (click)="cancelar()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>

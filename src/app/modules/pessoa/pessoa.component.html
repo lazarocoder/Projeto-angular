@@ -1,0 +1,33 @@
+<div class="row justify-content-end m-2">
+   <button class="btn btn-primary" [routerLink]="['/pessoas/adiciona']">Novo</button>
+ </div>
+ 
+ <table class="table table-hover">
+     <thead class="thead-light" >
+       <tr>
+       <th scope="col">ID:</th>
+       <th scope="col">Pessoa:</th>
+       <th scope="col">CPF:</th>
+       <th class="text-right">
+     </tr>
+   </thead>
+ 
+   <tbody>
+     <tr *ngFor="let pessoa of pessoas">
+       <td>{{ pessoa.id }}</td>
+       <td>{{ pessoa.nome }}</td>
+       <td>{{ pessoa.cpf }}</td>
+       <td class="text-right">
+         <div class="btn-group-sm">
+           <button type="button" [routerLink]="['/pessoas/atualiza', pessoa.id]" class="btn btn-primary m-1">
+             Atualizar</button>
+           <button type="button" [routerLink]="['/pessoas/visualiza', pessoa.id]"
+             class="btn btn-info m-1">Vizualizar</button>
+           <button type="button" (click)="excluir(pessoa.id)" class="btn btn-danger m-1">Excluir</button>
+         </div>
+       </td>
+     </tr>
+   </tbody>
+ </table>
+ 
+ 

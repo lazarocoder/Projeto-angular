@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <button type="button" class="navbar-toggler">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <button type="button" (click)="logout()" class="pull-right">
+      <span>Logout</span>
+    </button>
+  </div>
+</nav>
+<div class="container-fluid">
+  <h3 class="text-dark m-2">Servico de cadastro</h3>
+
+  <div class="form-group mt-5">
+    <button type="button" class="btn btn-info mr-3" [routerLink]="['/pessoas']">Pessoas</button>
+  </div>
+
+  <router-outlet></router-outlet>
+</div>
